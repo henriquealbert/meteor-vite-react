@@ -1,7 +1,12 @@
 import { Meteor } from 'meteor/meteor'
 import { App } from '/imports/ui/App'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom/client'
 
 Meteor.startup(() => {
-  render(<App />, document.getElementById('react-target'))
+  ReactDOM.createRoot(document.getElementById('react-target')).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  )
+  ReactDOM.render(<App />, document.getElementById())
 })
